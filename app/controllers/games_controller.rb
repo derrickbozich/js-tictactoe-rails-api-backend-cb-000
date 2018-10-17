@@ -2,10 +2,7 @@ class GamesController < ApplicationController
   # Add your GamesController code here
   def index
     @games = Game.all
-    respond_to do |format|
-      format.html { render 'home/index' }
-      format.json { render json: @games, status: 200}
-    end
+    render json: @games
   end
 
   def create
@@ -19,10 +16,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find_by_id(params[:id])
-    respond_to do |format|
-      format.html { render 'home/index' }
-      format.json { render json: @game, status: 200}
-    end
+    render json: @game, status: 200
   end
 
   def update
