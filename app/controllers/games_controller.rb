@@ -7,11 +7,7 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.create(state: params[:state])
-    respond_to do |format|
-      format.html { render 'home/index' }
-      format.json { render json: @game, status: 201}
-    end
-
+    render json: @game, status: 201
   end
 
   def show
@@ -22,10 +18,7 @@ class GamesController < ApplicationController
   def update
     @game = Game.find_by_id(params[:id])
     @game.update(state: params[:state])
-    respond_to do |format|
-      format.html { render 'home/index' }
-      format.json { render json: @game, status: 200}
-    end
+    render json: @game, status: 200
   end
 
 
