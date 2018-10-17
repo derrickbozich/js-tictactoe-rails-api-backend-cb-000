@@ -23,8 +23,11 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find_by_id(params[:id])
-    binding.pry
-    render 'home/index'
+    @game.update(state: params[:state])
+    respond_to do |format|
+      format.html { render 'home/index' }
+      format.json { render json: @game, status: 200}
+    end
   end
 
 
