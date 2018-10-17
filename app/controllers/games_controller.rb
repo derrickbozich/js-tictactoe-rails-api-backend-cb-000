@@ -15,6 +15,11 @@ class GamesController < ApplicationController
 
   def show
     binding.pry
+    @game = Game.find_by_id(params[:id])
+    respond_to do |format|
+      format.html { render 'home/index' }
+      format.json { render json: @game, status: 200}
+    end
     render 'home/index'
   end
 
