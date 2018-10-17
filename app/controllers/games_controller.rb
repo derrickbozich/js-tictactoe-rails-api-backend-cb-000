@@ -5,6 +5,7 @@ class GamesController < ApplicationController
   end
 
   def create
+    binding.pry
     render 'home/index'
   end
 
