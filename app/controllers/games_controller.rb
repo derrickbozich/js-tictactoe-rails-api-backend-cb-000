@@ -14,6 +14,7 @@ class GamesController < ApplicationController
   end
 
   def show
+    binding.pry
     render 'home/index'
   end
 
