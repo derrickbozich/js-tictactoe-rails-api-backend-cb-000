@@ -14,7 +14,6 @@ class GamesController < ApplicationController
   end
 
   def show
-    binding.pry
     @game = Game.find_by_id(params[:id])
     respond_to do |format|
       format.html { render 'home/index' }
