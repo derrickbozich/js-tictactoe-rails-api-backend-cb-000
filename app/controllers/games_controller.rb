@@ -22,6 +22,8 @@ class GamesController < ApplicationController
   end
 
   def update
+    @game = Game.find_by_id(params[:id])
+    binding.pry
     render 'home/index'
   end
 
