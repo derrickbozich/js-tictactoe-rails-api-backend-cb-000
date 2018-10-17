@@ -1,13 +1,11 @@
 class GamesController < ApplicationController
   # Add your GamesController code here
   def index
-    binding.pry
     @games = Game.all
     respond_to do |format|
       format.html { render 'home/index' }
       format.json { render json: @games, status: 200}
     end
-    render 'home/index'
   end
 
   def create
