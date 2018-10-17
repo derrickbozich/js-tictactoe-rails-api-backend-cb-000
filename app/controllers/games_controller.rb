@@ -20,7 +20,6 @@ class GamesController < ApplicationController
       format.html { render 'home/index' }
       format.json { render json: @game, status: 200}
     end
-    render 'home/index'
   end
 
   def update
