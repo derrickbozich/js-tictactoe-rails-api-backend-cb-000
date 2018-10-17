@@ -8,7 +8,7 @@ class GamesController < ApplicationController
     @game = Game.create(state: params[:state])
     respond_to do |format|
       format.html { render 'home/index' }
-      format.json { json: @game}
+      format.json { render json: @game, status: 201}
     end
 
   end
