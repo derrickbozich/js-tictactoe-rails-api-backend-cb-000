@@ -6,7 +6,12 @@ class GamesController < ApplicationController
 
   def create
     binding.pry
-    render 'home/index'
+    @game = Game.create(state: params[:state])
+    respond_to do |format|
+      format.html { render 'home/index' }
+      format.json { json: @game}
+    end
+
   end
 
   def show
@@ -16,6 +21,8 @@ class GamesController < ApplicationController
   def update
     render 'home/index'
   end
+
+
 
 
 end
