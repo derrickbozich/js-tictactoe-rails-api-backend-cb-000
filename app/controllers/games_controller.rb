@@ -5,7 +5,6 @@ class GamesController < ApplicationController
   end
 
   def create
-    binding.pry
     @game = Game.create(state: params[:state])
     respond_to do |format|
       format.html { render 'home/index' }
